@@ -1,0 +1,16 @@
+version: '2'
+services:
+    rabbit:
+        image: rabbitmq
+    client:
+        image: gangtetris/test-amqp-client
+        depends_on:
+            - rabbit
+            - server
+        ports:
+            - "8080:8080"
+    server:
+        image: gangtetris/test-amqp-server
+        depends_on:
+            - rabbit
+
