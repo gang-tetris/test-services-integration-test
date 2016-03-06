@@ -1,0 +1,5 @@
+script:
+  - docker-compose up -d
+  - docker-compose stop
+  - docker-sompose rm
+
