@@ -1,5 +1,10 @@
+sudo: required
+
 env:
   DOCKER_COMPOSE_VERSION: 1.6.2
+
+services:
+  - docker
 
 before_install:
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
