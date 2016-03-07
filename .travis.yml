@@ -8,9 +8,10 @@ services:
 
 before_install:
   - sudo apt-get update
-  - cat /etc/default/docker
+  - sudo cat /etc/default/docker
   - sudo apt-get purge docker-engine
   - sudo apt-get install docker-engine -y
+  - sudo service docker restart
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin/docker-compose
