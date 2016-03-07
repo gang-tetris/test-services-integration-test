@@ -7,15 +7,7 @@ services:
   - docker
 
 before_install:
-  - sudo apt-get update
-  - sudo cat /etc/default/docker
-  - sudo apt-get purge docker-engine -y
-  - sudo apt-get install docker-engine -y
-  - echo 'DOCKER_OPTS="-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock"' | sudo tee -a /etc/default/docker
-  - sudo service docker restart
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin/docker-compose
+  - sudo sh docker-upgrade.sh
 
 script:
   - docker-compose up -d
