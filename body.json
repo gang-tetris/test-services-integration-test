@@ -1,0 +1,6 @@
+{
+    "request": {
+        "message": "Integration tests request",
+        "branch":"master"
+    }
+}
