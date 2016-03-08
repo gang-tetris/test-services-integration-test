@@ -6,5 +6,11 @@ then
     exit 1
 fi
     
-curl -s -X POST -H Content-Type: application/json -H Accept: application/json -H Travis-API-Version: 3 -H Athorization: token ${GIT_TOKEN} -d @body.json https://api.travis-ci.org/repo/gang-tetris%2Ftest-services-integration-test/requests
+curl -s -X POST \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "Travis-API-Version: 3" \
+    -H "Authorization: token ${GIT_TOKEN}" \
+    -d @body.json \
+    "https://api.travis-ci.org/repo/$1%2F$2/requests"
 
