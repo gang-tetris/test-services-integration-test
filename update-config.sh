@@ -22,7 +22,8 @@ SHA=$(curl -s -X GET "${URL}" \
     grep '"sha":' | \
     sed 's/.*\([[:xdigit:]]\{40\}\).*/\1/g')
 
-BODY=$(sed "s/SHA/${SHA}/g;s/CONTENT/${CONTENT}/g;" config-update.json)
+BODY=$(sed "s/SHA/${SHA}/g;s/CONTENT/${CONTENT}/g;s/MESSAGE/${MESSAGE}/g;" \
+            config-update.json)
 
 curl -s -X PUT "${URL}" \
     -H "Authorization: token ${GIT_CONFIG_UPDATE_TOKEN}" \
