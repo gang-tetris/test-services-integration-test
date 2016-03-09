@@ -5,8 +5,11 @@ services:
 - docker
 before_install:
 - sh docker-upgrade.sh
-- sh build-git-docker.sh gang-tetris/test-amqp-client gangtetris/test-amqp-client
-- sh build-git-docker.sh gang-tetris/test-amqp-server gangtetris/test-amqp-server
+after_install:
+- source test-amqp-client-config.sh
+- source test-amqp-client-server.sh
+- sh build-git-docker.sh gang-tetris/test-amqp-client gangtetris/test-amqp-client "${TEST_AMQP_CLIENT_COMMIT}"
+- sh build-git-docker.sh gang-tetris/test-amqp-server gangtetris/test-amqp-server "${TEST_AMQP_SERVER_COMMIT}"
 script:
 - docker-compose up -d
 - docker-compose stop
