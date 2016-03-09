@@ -12,5 +12,5 @@ curl -s -X POST \
     -H "Travis-API-Version: 3" \
     -H "Authorization: token ${GIT_TOKEN}" \
     -d @body.json \
-    "https://api.travis-ci.org/repo/$1%2F$2/requests"
+    "https://api.travis-ci.org/repo/$1%2F$2/requests" > /dev/null
 

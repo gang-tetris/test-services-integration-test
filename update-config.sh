@@ -27,5 +27,5 @@ BODY=$(sed "s/SHA/${SHA}/g;s/CONTENT/${CONTENT}/g;s/MESSAGE/${MESSAGE}/g;" \
 
 curl -s -X PUT "${URL}" \
     -H "Authorization: token ${GIT_CONFIG_UPDATE_TOKEN}" \
-    -d "${BODY}"
+    -d "${BODY}" > /dev/null
 
