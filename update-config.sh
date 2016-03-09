@@ -1,6 +1,6 @@
-if [ -z "$5" ]
+if [ -z "$4" ]
 then
-    echo "Usage: $0 ORGANIZATION REPOSITORY FILEPATH CONTENT SHA [MESSAGE]"
+    echo "Usage: $0 ORGANIZATION REPOSITORY FILEPATH CONTENT [MESSAGE]"
     echo "  - ORGANIZATION organization or username"
     echo "  - REPOSITORY   repository name"
     echo "  - FILEPATH     path of file within repository"
