@@ -5,7 +5,6 @@ services:
 - docker
 before_install:
 - sh docker-upgrade.sh
-after_install:
 - source test-amqp-client-config.sh
 - source test-amqp-client-server.sh
 - sh build-git-docker.sh gang-tetris/test-amqp-client gangtetris/test-amqp-client "${TEST_AMQP_CLIENT_COMMIT}"
