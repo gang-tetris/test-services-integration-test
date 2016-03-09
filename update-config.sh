@@ -11,11 +11,11 @@ fi
 
 ORGANIZATION="$1"
 REPOSITORY="$2"
-PATH="$3"
+FILEPATH="$3"
 CONTENT="$4"
 MESSAGE="${5:-Config updated}"
 
-URL="https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/contents/${PATH}"
+URL="https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/contents/${FILEPATH}"
 
 SHA=$(curl -s -X GET "${URL}" \
     -H "Authorization: token ${GIT_CONFIG_UPDATE_TOKEN}" | \
