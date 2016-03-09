@@ -1,7 +1,5 @@
 {
-    "message": "Config updated",
+    "message": "MESSAGE",
     "content": "CONTENT",
-    "path": "PATH",
-    "branch": "master",
     "sha": "SHA"
 }
