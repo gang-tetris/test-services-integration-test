@@ -1,4 +1,4 @@
-if [ -z "$4" ]
+if [ -z "$2" ]
 then
     echo "Usage: $0 REPOSITORY_PATH PROJECT"
     echo "  - REPOSITORY_PATH         name of organization/user and repository"
