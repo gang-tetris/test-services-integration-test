@@ -11,7 +11,7 @@ REPOSITORY_PATH="$1"
 PROJECT="$2"
 
 FILEPATH="${PROJECT}-config.sh"
-VARS_PREFIX=$(tr '[:lower:]-' '[:upper:]_' ${PROJECT})
+VARS_PREFIX=$(tr '[:lower:]-' '[:upper:]_' <<< "${PROJECT}")
 
 CONTENT=$(base64 <(echo "export ${VARS_PREFIX}=\"${TRAVIS_COMMIT}\"") -w 0)
 COMMIT_DESCRIPTION="Changes ${TRAVIS_COMMIT_RANGE} in ${PROJECT}"
