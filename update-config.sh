@@ -13,7 +13,7 @@ PROJECT="$2"
 FILEPATH="${PROJECT}-config.sh"
 VARS_PREFIX=$(tr '[:lower:]-' '[:upper:]_' <<< "${PROJECT}")
 
-CONTENT=$(base64 <(echo "export ${VARS_PREFIX}=\"${TRAVIS_COMMIT}\"") -w 0)
+CONTENT=$(base64 <(echo "export ${VARS_PREFIX}_COMMIT=\"${TRAVIS_COMMIT}\"") -w 0)
 COMMIT_DESCRIPTION="Changes ${TRAVIS_COMMIT_RANGE} in ${PROJECT}"
 COMMIT_TITLE="Triggering tests"
 MESSAGE="${COMMIT_TITLE}\\\n\\\n${COMMIT_DESCRIPTION}"
