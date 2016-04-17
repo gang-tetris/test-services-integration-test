@@ -5,7 +5,7 @@ then
     echo "  - REPOSITORY   repository name"
     exit 1
 fi
-    
+
 curl -s -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
