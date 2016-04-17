@@ -13,6 +13,8 @@ script:
 - docker-compose up -d
 - docker-compose stop
 - docker-compose rm -f
+after-success:
+- bash trigger-build gang-tetris test-amqp-server test-amqp-client
 notifications:
   slack:
     secure: enqk/g+oD5B+dS4uwR7fTNnMrvD9Uju5mXJEaTNQ1l5AG6bN+yxRj9Bm22y/C9fYnTQ8zBspMDR5aXKnZdVnkQ42msuA55IwXaDl/xc9S7s7Qg4t8ory1+QkcbdyfBSBQZPW0uPmvPrPheBGM+FVcD3knYLef5wvfPY4fnOmejugORrqsW6xsQE2PTzuPHD3awT1tOiLezE2KpcWyL08Wh/baC3Z6o72TDU1w9dbN2z2fN1GIDq1wPzIoN6Crcupiu2JaGRYEvIHrIYYfjgIhUwEUCI431nwKSGiSzR/iqq20BgYwFUpaGUcEvwFXOUtO5cdRlhpA2+27zYHQUy9eOJwBtohUjKEzb+I9qjpxHSbSow3fUp4W/U+HgCLI124oiv5mrHKLngDO9BoVTSCcIFklVATM8IO62hTLj/rNbMel/qbYWs4CxGjK1kcctTDwjspGaf0h0m6zirFO+IXFcXDGJnUBIgS/5XzsRxlcCdbxc/JRta8BtBgcZ+iLOAvkN2kzyFwgIjfTa1z5T2WAPII3zrtrFJ6UOBE2JBntpoQqos4/KMgmJ7Eja73N9rIuscqZsts998KSeka63CjbkekLdlg2Ugd8/gBxyPAKqS7Og9BuQXiCIBMskCfpjzPV4Sbc8jzx/vHCFGNgW8tHkZ7EYLAumW1QtCdE492hKU=
