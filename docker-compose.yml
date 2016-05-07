@@ -1,7 +1,7 @@
 version: '2'
 services:
     rabbit:
-        image: rabbitmq
+        image: rabbitmq:3
     server:
         image: gangtetris/test-amqp-server
         depends_on:
