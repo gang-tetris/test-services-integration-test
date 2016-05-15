@@ -12,12 +12,10 @@ echo "Cassandra is up"
 REPOSITORY_PATH="gang-tetris/test-cassandra-repository"
 if [ ! -d "/tmp/${REPOSITORY_PATH}" ]
 then
-    echo "Folder /tmp/${REPOSITORY_PATH} does not exist. Creating"
     mkdir -p "/tmp/${REPOSITORY_PATH}"
     git clone "https://github.com/${REPOSITORY_PATH}.git" "/tmp/${REPOSITORY_PATH}/"
 fi
 cd "/tmp/${REPOSITORY_PATH}"
-echo "Running migrations"
 bash run_migrations.sh
 cd -
 
