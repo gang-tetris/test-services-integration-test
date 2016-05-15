@@ -13,6 +13,7 @@ before_install:
 script:
 - bash run_services.sh
 - bash run_application.sh
+- bash run_tests.sh
 - docker stop $(docker ps -qa)
 after_success:
 - bash trigger-build.sh "gangtetris" "test-amqp-server" "test-amqp-client" "test-cassandra-repository"
