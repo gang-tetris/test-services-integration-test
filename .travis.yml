@@ -11,7 +11,7 @@ before_install:
 - sh build-git-docker.sh gang-tetris/test-amqp-server gangtetris/test-amqp-server "${TEST_AMQP_SERVER_COMMIT}"
 - sh build-git-docker.sh gang-tetris/test-cassandra-repository gangtetris/test-cassandra-repository "${TEST_CASSANDRA_REPOSITORY_COMMIT}"
 script:
-- sh run_services.sh
+- bash run_services.sh
 - docker stop $(docker ps -qa)
 after_success:
 - bash trigger-build.sh "gangtetris" "test-amqp-server" "test-amqp-client" "test-cassandra-repository"
