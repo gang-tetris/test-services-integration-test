@@ -1,4 +1,4 @@
-for d in {repository,logic,s1}
+for d in {repository,logic,rest}
 do
     echo "LOGS for $d"
     docker logs $d
