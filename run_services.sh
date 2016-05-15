@@ -1,5 +1,5 @@
 docker run -d --name cassandra -h cassandra gangtetris/cassandra:2.2
-docker run -d --name hazelcast -h hazelcast gangtetris/hazelcast
+docker run -d --name hazelcast -h hazelcast -p 5701 gangtetris/hazelcast:3.6
 docker run -d --name rabbit -h rabbit rabbitmq:3
 
 until docker exec cassandra cqlsh -e quit
@@ -7,7 +7,7 @@ do
     sleep 1
 done
 
-REPOSITORY_PATH="test-cassandra-repository"
+REPOSITORY_PATH="gang-tetris/test-cassandra-repository"
 mkdir -p "/tmp/${REPOSITORY_PATH}"
 git clone "https://github.com/${REPOSITORY_PATH}.git" "/tmp/${REPOSITORY_PATH}/"
 cd "/tmp/${REPOSITORY_PATH}"
