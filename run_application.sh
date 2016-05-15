@@ -6,7 +6,7 @@ docker run -d \
 docker run -d \
     --link rabbit:rabbit \
     gangtetris/test-amqp-server
-docker run -d \
+docker run -d --name s1 -h s1 \
     --link rabbit:rabbit \
     gangtetris/test-amqp-client
 
