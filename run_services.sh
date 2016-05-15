@@ -8,10 +8,13 @@ do
 done
 
 REPOSITORY_PATH="gang-tetris/test-cassandra-repository"
-mkdir -p "/tmp/${REPOSITORY_PATH}"
-git clone "https://github.com/${REPOSITORY_PATH}.git" "/tmp/${REPOSITORY_PATH}/"
+if [ ! -d "/tmp/${REPOSITORY_PATH}" ]
+then
+    mkdir -p "/tmp/${REPOSITORY_PATH}"
+    git clone "https://github.com/${REPOSITORY_PATH}.git" "/tmp/${REPOSITORY_PATH}/"
+fi
 cd "/tmp/${REPOSITORY_PATH}"
-exec run_migrations.sh
+exec "/tmp/${REPOSITORY_PATH}/run_migrations.sh"
 cd -
 
 until docker exec -it rabbit rabbitctl status
