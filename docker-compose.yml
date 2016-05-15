@@ -3,9 +3,9 @@ services:
     rabbit:
         image: rabbitmq:3
     hazelcast:
-        image: hazelcast:3.6
+        image: hazelcast/hazelcast:3.6
     cassandra:
-        image: gangtetris:cassandra:2.2
+        image: gangtetris/cassandra:2.2
     repository:
         image: gangtetris/test-cassandra-repository
         depends_on:
