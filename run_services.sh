@@ -7,6 +7,8 @@ do
     sleep 1
 done
 
+echo "Cassandra is up"
+
 REPOSITORY_PATH="gang-tetris/test-cassandra-repository"
 if [ ! -d "/tmp/${REPOSITORY_PATH}" ]
 then
@@ -17,14 +19,20 @@ cd "/tmp/${REPOSITORY_PATH}"
 exec "/tmp/${REPOSITORY_PATH}/run_migrations.sh"
 cd -
 
-until docker exec -it rabbit rabbitctl status
+echo "Cassandra migrations applied"
+
+until docker exec rabbit rabbitmqctl status
 do
     sleep 1
 done
+
+echo "RabbitMQ is up"
 
 HAZELCAST_URL="http://0.0.0.0:5701/hazelcast/rest/management/cluster/state"
 until curl --data "app1&app1-pass" "${HAZELCAST_URL}"
 do
     sleep 1
 done
+
+echo "Hazelcast is up"
 
