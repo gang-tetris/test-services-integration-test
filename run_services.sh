@@ -18,8 +18,7 @@ then
 fi
 cd "/tmp/${REPOSITORY_PATH}"
 echo "Running migrations"
-ls
-exec "run_migrations.sh"
+bash run_migrations.sh
 cd -
 
 echo "Cassandra migrations applied"
